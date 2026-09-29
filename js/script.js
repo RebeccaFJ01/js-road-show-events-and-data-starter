@@ -1,3 +1,4 @@
+"use strict"
 // Husk fra dag 1: skriv "use strict" herunder
 
 
@@ -21,13 +22,32 @@ const cars = [
         fuel: "Benzin",
         sound: "sound/red-car-horn.wav"
     },
+      {
+        id: "policeCar",
+        brand: "Volvo",
+        model: "242",
+        year: 1982,
+        color: "blå og hvid",
+        fuel: "Diesel",
+        sound: "sound/police-car-sound.wav"
+    },
+    {
+        id: "bluecar",
+        brand: "Volkswagen",
+        model: "Passat",
+        year: 1979,
+        color: "Lyseblå",
+        fuel: "Diesel",
+        sound: "sound/blue-car-sound.wav"
+    },
 
-    // Skriv selv: et objekt for politibilen med samme nøgler som ovenfor.
+    // Skriv selv: et objekt for politibilen med samme nøgler som ovenfor. DONE
     //   id: "policeCar", brand: "Volvo", model: "242", year: 1982,
     //   color: "Politibil", fuel: "Diesel", sound: "sound/police-car-sound.wav"
 
+   
     // Skriv selv: et objekt for den blå bil.
-    //   id: "blueCar", brand: "Volkswagen", model: "Passat", year: 1979,
+    //   id: "blueCar", brand: "Volkswagen", model: "Passat", year: 1979, DONE
     //   color: "Lyseblå", fuel: "Diesel", sound: "sound/blue-car-sound.wav"
 
     // Husk komma mellem objekterne!
@@ -36,6 +56,10 @@ const cars = [
 // Test dit array: åbn konsollen i browseren (F12) og se, hvad der bliver skrevet ud.
 console.log(cars);
 console.log(cars[0].brand);
+
+cars.forEach (function(car) {
+
+});
 
 // Nyt i dag: forEach gennemløber et array og kører koden én gang for hver bil.
 // Sådan er en forEach bygget op:
