@@ -39,7 +39,24 @@ const cars = [
         color: "Lyseblå",
         fuel: "Diesel",
         sound: "sound/blue-car-sound.wav"
-    },
+    },{
+       id: "truck",
+        brand: "Renault",
+        model: "Trafic",
+        year: 2008,
+        color: "Gul",
+        fuel: "Diesel",
+        sound: "sound/truck-sound.wav"
+    },{
+       id: "bus",
+        brand: "Mercedes-Benz",
+        model: "Citaro",
+        year: 2008,
+        color: "Gul",
+        fuel: "El",
+        sound: "sound/bus-sound.wav"
+    }
+   
 
     // Skriv selv: et objekt for politibilen med samme nøgler som ovenfor. DONE
     //   id: "policeCar", brand: "Volvo", model: "242", year: 1982,

@@ -127,6 +127,8 @@
 --------------------------------------------------------- */
 .car1,
 .car2,
+.bus,
+.truck,
 .car3 {
    position: absolute;
    width: var(--car-w);
@@ -279,6 +281,30 @@
    Hint: den fælles regel har max-width: 28vw. Hvorfor er det vigtigt,
    at køretøjerne aldrig er bredere end 30vw? (Kig på regnestykket ved car1.)
 */
+
+.bus {
+   
+   bottom: 2.8vh;
+   left: -30vw; /* starter 30vw uden for skærmen til venstre */
+   animation: bus 20s linear infinite;
+}
+
+@keyframes bus {
+   0%   { transform: translateX(0)rotateY(180deg); }
+   100% { transform: translateX(-130vw) rotateY(180deg); }
+}
+
+.truck {
+   
+   bottom: 2.8vh;
+   left: -30vw; /* starter 30vw uden for skærmen til venstre */
+   animation: truck 3s linear infinite;
+}
+
+@keyframes truck {
+   0%   { transform: translateX(0)rotateY(0deg); }
+   100% { transform: translateX(-130vw) rotateY(0deg); }
+}
 
 
 /* ---------------------------------------------------------
