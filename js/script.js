@@ -57,9 +57,7 @@ const cars = [
 console.log(cars);
 console.log(cars[0].brand);
 
-cars.forEach (function(car) {
 
-});
 
 // Nyt i dag: forEach gennemløber et array og kører koden én gang for hver bil.
 // Sådan er en forEach bygget op:
@@ -73,7 +71,9 @@ cars.forEach (function(car) {
 //
 // Ekstra: skriv også model og årgang ud på samme linje.
 
-
+cars.forEach (function(carObj) {
+   console.log(`${carObj.brand} ${carObj.model}`)
+});
 
 /* ---------------------------------------------------------
    2. HENT ELEMENTER FRA HTML
@@ -86,20 +86,21 @@ const getTooltip = document.getElementById("tooltip");
 // Variablerne skal hedde getSun og getScene.
 //
 // Husk: class bruges til CSS (udseende), id bruges til JavaScript.
-
-
+const getSun = document.getElementById("sun")
+const getScene = document.getElementById("scene")
 
 /* ---------------------------------------------------------
    3. DAG OG NAT
 --------------------------------------------------------- */
-
 // Skriv selv: lyt efter "click" på getSun og kør en anonym function - ligesom i de tidligere opgaver.
 //
 // Nyt i dag: getScene.classList.toggle("night") tilføjer klassen "night", hvis den mangler,
 // og fjerner den, hvis den er der. Det er samme idé som din if/else i billedskift-opgaven,
 // men toggle klarer det på én linje. Selve udseendet står i CSS'en under .scene.night.
 
-
+getSun.addEventListener("click", function(){
+const getSun = document.getElementById("sun")
+});
 
 /* ---------------------------------------------------------
    4. FUNKTIONER
@@ -109,7 +110,7 @@ const getTooltip = document.getElementById("tooltip");
 // Når vi kalder showTooltip(cars[0]), er "car" inde i funktionen den røde bil.
 
 // Denne variabel husker tooltip'ens timer (bruges nederst i showTooltip)
-let tooltipTimer;
+//: let tooltipTimer; ://
 
 function showTooltip(car) {
 
@@ -119,6 +120,8 @@ function showTooltip(car) {
     getTooltip.innerHTML = `
         <strong>${car.brand} ${car.model}</strong><br>
         Årgang: ${car.year}<br>
+        Farve: ${car.color}<br>
+        Brændstof: ${car.fuel}<br>
     `;
     // Skriv selv: tilføj to linjer mere inde i backticks ovenfor: farve (car.color) og brændstof (car.fuel).
 
@@ -135,10 +138,16 @@ function showTooltip(car) {
 // Skriv selv en funktion, der hedder hideTooltip.
 // Den skal fjerne klassen "is-visible" fra getTooltip. Brug classList.remove - det modsatte af classList.add.
 
-
+function hideTooltip() {
+   getTooltip.classList.remove("is-visible");
+};
 
 // Skriv selv en funktion, der hedder playSound, og som tager imod parameteren car.
 //
+function playSound(car) {
+const audio = new Audio (car.sound);
+audio.play()};
+
 // Husk fra soundboard-øvelsen: new Audio(...) opretter et lydobjekt,
 // og inde i parentesen skriver du stien til den lydfil, der skal spilles.
 //
@@ -172,7 +181,9 @@ cars.forEach(function(car) {
     });
 
     // Skriv selv: lyt efter "click" på getCarElem og kald playSound(car) inde i en anonym function.
-
+    getCarElem.addEventListener("click", function(){
+      playSound(car)
+    });
 });
 
 /* =========================================================
